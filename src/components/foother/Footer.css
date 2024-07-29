@@ -1,0 +1,9 @@
+ion-toolbar {
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+}
+
+.logo-img {
+    width: 150px;
+    margin: auto;
+}

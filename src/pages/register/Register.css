@@ -1,0 +1,29 @@
+.register-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1226AA;
+}
+
+.register-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: var(--ion-color-light);
+    width: 90%;
+    border: 1px solid black;
+}
+
+.logo-img-login {
+    width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+    filter: invert(1);
+}
+
+.register-button {
+    padding-top: 10px;
+    margin-top: 10px;
+}

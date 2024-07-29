@@ -1,0 +1,25 @@
+ion-list {
+    margin: 0% !important;
+}
+
+.mail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+p {
+    margin: 0%;
+}

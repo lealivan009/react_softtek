@@ -1,0 +1,15 @@
+.person-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.person-info h4 {
+    margin: 0;
+}
+
+.person-info p {
+    margin: 0;
+    font-size: 0.9em;
+    color: gray;
+}
