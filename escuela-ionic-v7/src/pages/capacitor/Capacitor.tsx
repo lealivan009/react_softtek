@@ -16,6 +16,7 @@ const Capacitor: React.FC = () => {
                 resultType: CameraResultType.Uri
             });
             setImage(photo.webPath || '');
+            console.log(photo.webPath);
         } catch (error) {
             console.error('Error taking photo', error);
         }
