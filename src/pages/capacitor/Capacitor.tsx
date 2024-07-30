@@ -27,28 +27,16 @@ const Capacitor: React.FC = () => {
             <Header />
             <Footer />
             <IonContent >
-                <div>
-                    <IonCard color='light'>
-                        <IonHeader>
-                            <IonCardTitle className='ion-text-center'>
-                                Capacitor
-                            </IonCardTitle>
-                        </IonHeader>
-                        <IonCardContent>
-                            {
-                                image !== ''
-                                    ? <img src={image} alt="Captured" />
-                                    : <p>Take a picture</p>
-                            }
-                            <IonFab vertical='bottom' horizontal='center' slot='fixed'>
-                                <IonFabButton onClick={() => takePicture()}>
-                                    <IonIcon icon={camera} ></IonIcon>
-                                </IonFabButton>
-                            </IonFab>
-                        </IonCardContent>
-                    </IonCard>
-                </div>
-
+                {
+                    image !== ''
+                        ? <img src={image} alt="Captured" />
+                        : <p>Take a picture</p>
+                }
+                <IonFab vertical='bottom' horizontal='center' slot='fixed'>
+                    <IonFabButton onClick={() => takePicture()}>
+                        <IonIcon icon={camera} ></IonIcon>
+                    </IonFabButton>
+                </IonFab>
             </IonContent>
         </IonPage>
     )
