@@ -53,9 +53,6 @@ const Home: React.FC = () => {
                         refreshingText="Refreshing..."
                     ></IonRefresherContent>
                 </IonRefresher>
-                <IonHeader>
-                    <IonLabel></IonLabel>
-                </IonHeader>
                 <IonCard>
                     <IonCardHeader className="ion-text-center">
                         <strong>Welcome {user}!</strong>

@@ -1,9 +1,17 @@
-.info-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
+.user-location {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.info-row p {
-    margin: 0;
+.user-info {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user-button {
+    text-align: center;
+}
+
+.user-icon {
+    margin: 10px 5px 0px 5px;
 }

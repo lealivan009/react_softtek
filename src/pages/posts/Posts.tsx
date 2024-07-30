@@ -14,7 +14,7 @@ const Posts: React.FC = () => {
             <Footer />
             <IonContent color="light">
                 <div className="settings-container">
-                    <IonSearchbar showCancelButton="focus" placeholder="Search" mode="ios"></IonSearchbar>
+                    <IonSearchbar showCancelButton="focus" placeholder="Search" ></IonSearchbar>
                     <IonCard className="settings-card">
                         <IonList inset={true} >
                             <Mails />

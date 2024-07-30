@@ -1,4 +1,3 @@
-// Define the User model
 interface User {
     gender: string;
     name: {
