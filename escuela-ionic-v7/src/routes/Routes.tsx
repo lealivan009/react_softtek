@@ -12,6 +12,7 @@ import Capacitor from "../pages/capacitor/Capacitor";
 import Contacts from "../pages/contacts/Contacts";
 import AuthCheck from "../security/AuthCheck";
 import ForgetPassword from "../pages/forgetPassword/ForgotPassword";
+import Capacitor1 from "../pages/capacitor1/Capacitor1";
 
 const Routes: React.FC = () => {
     //const username = localStorage.getItem("username");
@@ -27,7 +28,7 @@ const Routes: React.FC = () => {
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
                     <Route path="/forgotpassword" component={ForgetPassword} />
-                    <Route path="/capacitor" component={Capacitor} />
+                    <Route path="/capacitor" component={Capacitor1} />
                     <Redirect exact from="/" to="/contacts" />
                 </AuthCheck>
             </IonRouterOutlet>
