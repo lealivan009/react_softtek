@@ -1,11 +1,15 @@
 import React from 'react';
 import { IonFooter, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
-import { mail, person, settings } from 'ionicons/icons';
+import { home, mail, person, settings } from 'ionicons/icons';
 
 const Footer: React.FC = () => {
     return (
         <IonFooter>
             <IonTabBar slot="bottom">
+                <IonTabButton tab="home" href="/home">
+                    <IonIcon aria-hidden="true" icon={home} />
+                    <IonLabel>Home</IonLabel>
+                </IonTabButton>
                 <IonTabButton tab="contacts" href="/contacts">
                     <IonIcon aria-hidden="true" icon={person} />
                     <IonLabel>Contacts</IonLabel>

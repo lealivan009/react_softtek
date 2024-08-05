@@ -9,6 +9,7 @@ import { wifi, warningOutline } from 'ionicons/icons';
 import { PluginListenerHandle } from '@capacitor/core';
 
 import './Capacitor.css';
+import Footer from '../../components/foother/Footer';
 
 //npm install @capacitor/core @capacitor/cli @capacitor/camera @capacitor/geolocation @capacitor/filesystem @capacitor/local-notifications @capacitor/share @capacitor/network @capacitor/storage @capacitor/haptics @capacitor/clipboard @capacitor/browser
 
@@ -83,6 +84,7 @@ const Capacitor1: React.FC = () => {
                     />
                 </IonToolbar>
             </IonHeader>
+            <Footer />
             <IonContent>
                 <IonList>
                     <IonItem>
