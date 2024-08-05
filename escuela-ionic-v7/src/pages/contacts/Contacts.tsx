@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonRefresher, IonRefresherContent, IonList, IonItem, IonAvatar, IonCard, IonHeader, IonLabel, IonCardHeader, IonCardContent } from "@ionic/react";
+import { IonContent, IonPage, IonRefresher, IonRefresherContent, IonList, IonItem, IonAvatar, IonCard, IonHeader, IonLabel, IonCardHeader, IonCardContent, IonBadge } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import { chevronDownCircleOutline, informationCircleOutline } from "ionicons/icons";
@@ -72,6 +72,7 @@ const Home: React.FC = () => {
                                         <h4>{person.name.first}</h4>
                                         <p>{person.email}</p>
                                     </div>
+                                    <IonBadge slot="end">11</IonBadge>
                                 </IonItem>
                             ))}
                         </IonList>
