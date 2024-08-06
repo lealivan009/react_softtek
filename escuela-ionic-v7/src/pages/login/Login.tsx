@@ -38,7 +38,7 @@ const Login: React.FC = () => {
             setToastMessage('Login successful');
             setToastColor('success');
             setShowToast(true);
-            history.push('/contacts');
+            history.push('/home');
             saveInLocalStorage('email', email);
         } catch (error) {
             setToastMessage('Login failed');

@@ -1,9 +1,11 @@
 import { IonRefresher, IonRefresherContent } from "@ionic/react";
 import { chevronDownCircleOutline } from "ionicons/icons";
 
+
 interface refresherProp {
     onRefresh: (event: CustomEvent) => void;
 }
+
 const Refresher: React.FC<refresherProp> = ({ onRefresh }) => {
     return (
         <>
