@@ -104,7 +104,7 @@ const ChangePassword: React.FC = () => {
                                             color="medium"
                                             routerLink="/settings"
                                             fill='outline'>
-                                            Cancel
+                                            Back
                                         </IonButton>
                                     </IonCardContent>
                                 </IonCard>

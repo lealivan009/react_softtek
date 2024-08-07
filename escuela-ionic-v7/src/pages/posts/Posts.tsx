@@ -15,7 +15,7 @@ const Posts: React.FC = () => {
             <IonContent color="light">
                 <IonGrid>
                     <IonRow>
-                        <IonCol sizeLg='10' sizeSm='12' offsetLg='1'>
+                        <IonCol sizeLg='6' sizeSm='12' offsetLg='3'>
                             <div className="settings-container">
                                 <IonSearchbar showCancelButton="focus" placeholder="Search" ></IonSearchbar>
                                 <IonCard className="settings-card">
