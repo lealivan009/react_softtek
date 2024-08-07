@@ -1,4 +1,4 @@
-import { IonButton, IonImg, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonPage, IonToast } from '@ionic/react';
+import { IonButton, IonImg, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonPage, IonToast, IonCol, IonGrid, IonRow } from '@ionic/react';
 import { useState } from 'react';
 import './Register.css'
 import { register } from '../../services/firebaseService';
@@ -61,7 +61,7 @@ const Register: React.FC = () => {
 
     return (
         <IonPage>
-            <IonContent>
+            <IonContent color='primary'>
                 <IonToast
                     isOpen={showToast}
                     onDidDismiss={() => setShowToast(false)}
@@ -69,55 +69,62 @@ const Register: React.FC = () => {
                     duration={2000}
                     color={toastColor}
                 />
-                <div className='register-content'>
-                    <IonCard className='register-card'>
-                        <IonImg
-                            src="src/assets/assets/logo_osde.svg"
-                            className="logo-img-login"
-                        />
-                        <IonCardHeader>
-                            <IonCardTitle className="ion-text-center">Register</IonCardTitle>
-                        </IonCardHeader>
-                        <IonCardContent>
-                            <IonList>
-                                <IonItem>
-                                    <IonInput
-                                        value={email}
-                                        label='Email'
-                                        placeholder='Input your email'
-                                        type='email'
-                                        labelPlacement='floating'
-                                        onIonChange={(e) => { setEmail(e.detail.value!); console.log(e.detail.value!); }}
+
+                <div className='full-height'>
+                    <IonGrid >
+                        <IonRow>
+                            <IonCol sizeLg='4' sizeSm='12' offsetLg='4'>
+                                <IonCard className='register-card'>
+                                    <IonImg
+                                        src="src/assets/assets/logo_osde.svg"
+                                        className="logo-img-login"
                                     />
-                                </IonItem>
-                                <IonItem>
-                                    <IonInput
-                                        value={password}
-                                        label='Password'
-                                        placeholder='Input your password'
-                                        type='password'
-                                        labelPlacement='floating'
-                                        onIonChange={(e) => { setPassword(e.detail.value!); }}
-                                    />
-                                </IonItem>
-                            </IonList>
-                            <div className='register-button'>
-                                <IonButton
-                                    expand="block"
-                                    color="primary"
-                                    onClick={handleRegister}>
-                                    Register
-                                </IonButton>
-                                <IonButton
-                                    expand="block"
-                                    color="medium"
-                                    routerLink="/login"
-                                    fill='outline'>
-                                    Cancel
-                                </IonButton>
-                            </div>
-                        </IonCardContent>
-                    </IonCard>
+                                    <IonCardHeader>
+                                        <IonCardTitle className="ion-text-center">Register</IonCardTitle>
+                                    </IonCardHeader>
+                                    <IonCardContent>
+                                        <IonList>
+                                            <IonItem>
+                                                <IonInput
+                                                    value={email}
+                                                    label='Email'
+                                                    placeholder='Input your email'
+                                                    type='email'
+                                                    labelPlacement='floating'
+                                                    onIonChange={(e) => { setEmail(e.detail.value!); console.log(e.detail.value!); }}
+                                                />
+                                            </IonItem>
+                                            <IonItem>
+                                                <IonInput
+                                                    value={password}
+                                                    label='Password'
+                                                    placeholder='Input your password'
+                                                    type='password'
+                                                    labelPlacement='floating'
+                                                    onIonChange={(e) => { setPassword(e.detail.value!); }}
+                                                />
+                                            </IonItem>
+                                        </IonList>
+                                        <div className='register-button'>
+                                            <IonButton
+                                                expand="block"
+                                                color="primary"
+                                                onClick={handleRegister}>
+                                                Register
+                                            </IonButton>
+                                            <IonButton
+                                                expand="block"
+                                                color="medium"
+                                                routerLink="/login"
+                                                fill='outline'>
+                                                Cancel
+                                            </IonButton>
+                                        </div>
+                                    </IonCardContent>
+                                </IonCard>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
                 </div>
             </IonContent>
         </IonPage>

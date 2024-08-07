@@ -17,6 +17,7 @@ import Profile from "../pages/profile/Profile";
 import Consultation from "../pages/consultation/Consultation";
 import Payments from "../pages/payments/Payments";
 import Appointment from "../pages/appointment/Appointment";
+import ChangePassword from "../pages/changePassword/ChangePassword";
 
 const Routes: React.FC = () => {
     //const username = localStorage.getItem("username");
@@ -39,6 +40,7 @@ const Routes: React.FC = () => {
                     <Route exact path="/payments" component={Payments} />
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/consultation" component={Consultation} />
+                    <Route exact path="/changePassword" component={ChangePassword} />
                     <Redirect exact from="/" to="/home" />
                 </AuthCheck>
             </IonRouterOutlet>

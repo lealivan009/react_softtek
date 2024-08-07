@@ -85,7 +85,7 @@ const Capacitor1: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <Footer />
-            <IonContent>
+            <IonContent color='light'>
                 <IonList>
                     <IonItem>
                         <div className="divIonItem" >

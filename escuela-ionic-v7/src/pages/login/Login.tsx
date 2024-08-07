@@ -10,7 +10,10 @@ import {
     IonButton,
     IonPage,
     IonContent,
-    IonToast
+    IonToast,
+    IonCol,
+    IonGrid,
+    IonRow
 } from "@ionic/react";
 import { useHistory } from 'react-router';
 import { login } from '../../services/firebaseService';
@@ -49,7 +52,7 @@ const Login: React.FC = () => {
 
     return (
         <IonPage>
-            <IonContent>
+            <IonContent className='full-height' color='primary'>
                 <IonToast
                     isOpen={showToast}
                     onDidDismiss={() => setShowToast(false)}
@@ -57,53 +60,58 @@ const Login: React.FC = () => {
                     duration={2000}
                     color={toastColor}
                 />
-
-                <div className="login-content">
-                    <IonCard className="login-card">
-                        <IonImg
-                            src="src/assets/assets/logo_osde.svg"
-                            className="logo-img-login"
-                        />
-                        <IonCardHeader>
-                            <IonCardTitle className="ion-text-center">Login</IonCardTitle>
-                        </IonCardHeader>
-                        <IonCardContent>
-                            <IonItem className="login-item">
-                                <IonInput
-                                    value={email}
-                                    label='Email'
-                                    placeholder='Input your email'
-                                    type='email'
-                                    labelPlacement='floating'
-                                    onIonChange={(e) => { setEmail(e.detail.value!); console.log(e.detail.value!); }}
-                                />
-                            </IonItem>
-                            <IonItem className="login-item">
-                                <IonInput
-                                    value={password}
-                                    label='Password'
-                                    placeholder='Input your password'
-                                    type='password'
-                                    labelPlacement='floating'
-                                    onIonChange={(e) => { setPassword(e.detail.value!); }}
-                                />
-                            </IonItem>
-                            <IonButton
-                                expand="block"
-                                color="primary"
-                                onClick={handleLogin}>
-                                Login
-                            </IonButton>
-                            <p className="forgot-password" onClick={() => history.push("/forgotpassword")}>
-                                <a >Forgot your password? Click here!</a>
-                            </p>
-                            <div className="button-create-account">
-                                <IonButton expand="block" fill="outline" color="primary" routerLink="/register">
-                                    Create new account
-                                </IonButton>
-                            </div>
-                        </IonCardContent>
-                    </IonCard>
+                <div className='full-height'>
+                    <IonGrid >
+                        <IonRow>
+                            <IonCol sizeLg='4' sizeSm='12' offsetLg='4'>
+                                <IonCard className="login-card">
+                                    <IonImg
+                                        src="src/assets/assets/logo_osde.svg"
+                                        className="logo-img-login"
+                                    />
+                                    <IonCardHeader>
+                                        <IonCardTitle className="ion-text-center">Login</IonCardTitle>
+                                    </IonCardHeader>
+                                    <IonCardContent>
+                                        <IonItem className="login-item">
+                                            <IonInput
+                                                value={email}
+                                                label='Email'
+                                                placeholder='Input your email'
+                                                type='email'
+                                                labelPlacement='floating'
+                                                onIonChange={(e) => { setEmail(e.detail.value!); console.log(e.detail.value!); }}
+                                            />
+                                        </IonItem>
+                                        <IonItem className="login-item">
+                                            <IonInput
+                                                value={password}
+                                                label='Password'
+                                                placeholder='Input your password'
+                                                type='password'
+                                                labelPlacement='floating'
+                                                onIonChange={(e) => { setPassword(e.detail.value!); }}
+                                            />
+                                        </IonItem>
+                                        <IonButton
+                                            expand="block"
+                                            color="primary"
+                                            onClick={handleLogin}>
+                                            Login
+                                        </IonButton>
+                                        <p className="forgot-password" onClick={() => history.push("/forgotpassword")}>
+                                            <a >Forgot your password? Click here!</a>
+                                        </p>
+                                        <div className="button-create-account">
+                                            <IonButton expand="block" fill="outline" color="primary" routerLink="/register">
+                                                Create new account
+                                            </IonButton>
+                                        </div>
+                                    </IonCardContent>
+                                </IonCard>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
                 </div>
             </IonContent>
         </IonPage>

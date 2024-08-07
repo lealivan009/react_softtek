@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonList, IonItem, IonAvatar, IonCard, IonCardContent, IonSkeletonText } from "@ionic/react";
+import { IonContent, IonPage, IonList, IonItem, IonAvatar, IonCard, IonCardContent, IonSkeletonText, IonCol, IonGrid, IonRow } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import { getAllPerson } from "../../services/randomUserService";
@@ -48,35 +48,42 @@ const Home: React.FC = () => {
         <IonPage>
             <Header />
             <Footer />
-            <IonContent fullscreen>
+            <IonContent color='light'>
                 <Refresher onRefresh={handleRefresh} />
+                <IonGrid >
+                    <IonRow>
+                        <IonCol sizeLg='6' sizeSm='12' offsetLg='3'>
+                            {loaded && (
+                                <IonCard>
+                                    <IonCardContent>
+                                        <IonList inset={true} lines="none">
+                                            {persons.map((person, index) => (
+                                                <IonItem
+                                                    key={person.id.value || person.login.uuid}
+                                                    button
+                                                    onClick={() => handleItemClick(person)}
+                                                >
+                                                    <IonAvatar slot="start">
+                                                        <img alt={person.name.first} src={person.picture.thumbnail} />
+                                                    </IonAvatar>
+                                                    <div className="person-info">
+                                                        <h4>{person.name.first}</h4>
+                                                        <p>{person.email}</p>
+                                                    </div>
+                                                </IonItem>
+                                            ))}
+                                        </IonList>
+                                    </IonCardContent>
+                                </IonCard>
+                            )}
+                            {!loaded && (
+                                <SkeletonList numItem={10} />
+                            )}
 
-                {loaded && (
-                    <IonCard>
-                        <IonCardContent>
-                            <IonList inset={true} lines="none">
-                                {persons.map((person, index) => (
-                                    <IonItem
-                                        key={person.id.value || person.login.uuid}
-                                        button
-                                        onClick={() => handleItemClick(person)}
-                                    >
-                                        <IonAvatar slot="start">
-                                            <img alt={person.name.first} src={person.picture.thumbnail} />
-                                        </IonAvatar>
-                                        <div className="person-info">
-                                            <h4>{person.name.first}</h4>
-                                            <p>{person.email}</p>
-                                        </div>
-                                    </IonItem>
-                                ))}
-                            </IonList>
-                        </IonCardContent>
-                    </IonCard>
-                )}
-                {!loaded && (
-                    <SkeletonList numItem={10} />
-                )}
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
+
             </IonContent>
         </IonPage>
     );

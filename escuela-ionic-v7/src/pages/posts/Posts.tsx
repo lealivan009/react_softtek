@@ -1,4 +1,4 @@
-import { IonCard, IonContent, IonList, IonPage, IonSearchbar } from "@ionic/react"
+import { IonCard, IonCol, IonContent, IonGrid, IonList, IonPage, IonRow, IonSearchbar } from "@ionic/react"
 import React from "react"
 import "./Posts.css"
 import Footer from "../../components/foother/Footer";
@@ -13,14 +13,20 @@ const Posts: React.FC = () => {
             <Header />
             <Footer />
             <IonContent color="light">
-                <div className="settings-container">
-                    <IonSearchbar showCancelButton="focus" placeholder="Search" ></IonSearchbar>
-                    <IonCard className="settings-card">
-                        <IonList inset={true} >
-                            <Mails />
-                        </IonList>
-                    </IonCard>
-                </div>
+                <IonGrid>
+                    <IonRow>
+                        <IonCol sizeLg='10' sizeSm='12' offsetLg='1'>
+                            <div className="settings-container">
+                                <IonSearchbar showCancelButton="focus" placeholder="Search" ></IonSearchbar>
+                                <IonCard className="settings-card">
+                                    <IonList inset={true} >
+                                        <Mails />
+                                    </IonList>
+                                </IonCard>
+                            </div>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
             </IonContent>
         </IonPage>
     );

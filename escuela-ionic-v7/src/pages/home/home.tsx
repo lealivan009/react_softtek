@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/header/Header';
 import Footer from '../../components/foother/Footer';
-import { User1 } from '../../models/User1.mode';
+import { User1 } from '../../models/User1.model';
 import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonLabel, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 import { personOutline, helpCircleOutline, notificationsOutline, calendarOutline, medicalOutline, walletOutline } from 'ionicons/icons';
 
@@ -41,64 +41,79 @@ const Home: React.FC = () => {
         <IonPage>
             <Header />
             <Footer />
-            <IonContent>
+            <IonContent color='light'>
+                <IonGrid>
+                    <IonRow>
+                        <IonCol sizeLg='4' sizeSm='12' offsetLg='4'>
+                            <Swiper
+                                modules={[Autoplay]}
+                                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                                loop={true} >
+                                {loaded &&
+                                    users.map((usuario, index) =>
+                                        <SwiperSlide key={index}>
+                                            <CardSocio
+                                                name={usuario.name}
+                                                numberCard={usuario.numberCard}
+                                                plan={usuario.plan}
+                                                cartilla={usuario.cartilla}
+                                                color={usuario.isPrimary ? 'primary' : 'secondary'}
+                                            />
+                                        </SwiperSlide>
+                                    )}
+                                {!loaded &&
+                                    <SwiperSlide >
+                                        <CardSocioSkeletor />
+                                    </SwiperSlide>
+                                }
+                            </Swiper>
+                        </IonCol>
+                    </IonRow>
 
-                <Swiper
-                    modules={[Autoplay]}
-                    autoplay={{ delay: 5000, disableOnInteraction: false }}
-                    loop={true} >
-                    {loaded &&
-                        users.map((usuario, index) =>
-                            <SwiperSlide key={index}>
-                                <CardSocio
-                                    name={usuario.name}
-                                    numberCard={usuario.numberCard}
-                                    plan={usuario.plan}
-                                    cartilla={usuario.cartilla}
-                                    color={usuario.isPrimary ? 'primary' : 'secondary'}
-                                />
-                            </SwiperSlide>
-                        )}
-                    {!loaded &&
-                        <SwiperSlide >
-                            <CardSocioSkeletor />
-                        </SwiperSlide>
-                    }
-                </Swiper>
+                    <IonRow>
+                        <IonCol sizeLg='6' sizeSm='12' offsetLg='3'>
+                            <GridMenu />
+                        </IonCol>
+                    </IonRow>
+                    <IonRow>
 
-                <GridMenu />
+                        <IonCol sizeLg='6' sizeSm='12' offsetLg='3'>
+                            <IonCard>
+                                <IonCardHeader>
+                                    <IonCardTitle>Recent Transactions</IonCardTitle>
+                                    <IonCardSubtitle>Recent movements in your account</IonCardSubtitle>
+                                </IonCardHeader>
+                                <IonCardContent>
+                                    <ul>
+                                        <li>Subscription payment - $3000 - 01/08/2024</li>
+                                        <li>Refund - $150 - 25/07/2024</li>
+                                        <li>Medical consultation - $500 - 20/07/2024</li>
+                                    </ul>
+                                </IonCardContent>
+                            </IonCard>
 
-                <IonCard>
-                    <IonCardHeader>
-                        <IonCardTitle>Recent Transactions</IonCardTitle>
-                        <IonCardSubtitle>Recent movements in your account</IonCardSubtitle>
-                    </IonCardHeader>
-                    <IonCardContent>
-                        <ul>
-                            <li>Subscription payment - $3000 - 01/08/2024</li>
-                            <li>Refund - $150 - 25/07/2024</li>
-                            <li>Medical consultation - $500 - 20/07/2024</li>
-                        </ul>
-                    </IonCardContent>
-                </IonCard>
+                            <IonCard>
+                                <IonCardHeader>
+                                    <IonCardTitle>Upcoming Consultations</IonCardTitle>
+                                    <IonCardSubtitle>Scheduled consultations</IonCardSubtitle>
+                                </IonCardHeader>
+                                <IonCardContent>
+                                    <ul>
+                                        <li>Consultation with Dr. Pérez - 05/08/2024</li>
+                                        <li>Consultation with Dr. Gómez - 10/08/2024</li>
+                                        <li>Consultation with Dr. Fernández - 15/08/2024</li>
+                                    </ul>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
 
-                <IonCard>
-                    <IonCardHeader>
-                        <IonCardTitle>Upcoming Consultations</IonCardTitle>
-                        <IonCardSubtitle>Scheduled consultations</IonCardSubtitle>
-                    </IonCardHeader>
-                    <IonCardContent>
-                        <ul>
-                            <li>Consultation with Dr. Pérez - 05/08/2024</li>
-                            <li>Consultation with Dr. Gómez - 10/08/2024</li>
-                            <li>Consultation with Dr. Fernández - 15/08/2024</li>
-                        </ul>
-                    </IonCardContent>
-                </IonCard>
+
 
 
             </IonContent>
-        </IonPage>
+        </IonPage >
     );
 };
 

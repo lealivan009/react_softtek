@@ -22,7 +22,7 @@ const Agenda: React.FC = () => {
         <IonPage>
             <Header />
             <Footer />
-            <IonContent>
+            <IonContent color='light'>
                 <IonCard>
                     <IonDatetime
                         locale="es-ES"
